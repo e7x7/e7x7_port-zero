@@ -1,0 +1,19 @@
+{
+	"name": "e7x7-pf0-vite",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"vite": "^3.2.3"
+	},
+	"dependencies": {
+		"pathe": "^1.0.0",
+		"scss": "^0.2.4",
+		"three": "^0.146.0",
+		"vite-plugin-glsl": "^0.5.4"
+	}
+}
