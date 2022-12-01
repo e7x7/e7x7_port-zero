@@ -8,9 +8,6 @@ import testTexture from './images/edge.jpg'
 //import testTexture from './img/cable6.png'
 //console.log(testTexture)
 //const testT = testTexture
-
-
-
 export default class Sketch {
 	constructor(options) {
 		this.container = options.domElement
