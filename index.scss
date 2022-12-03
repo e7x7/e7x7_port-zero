@@ -1,3 +1,5 @@
+@import './reset.scss';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,6 +13,7 @@ html {
 body {
 	background: #000707;
 	color: #ffffff;
+	max-width: 100%;
 }
 canvas {
 	display: block;
@@ -19,7 +22,7 @@ canvas {
 
 #script-container {
 	//background: #e1f1f1;
-	background: #77f7f7e7;
+	background: #77f7f77e;
 	//background-color: #7fff7f77;
 }
 .container1 {
@@ -28,8 +31,9 @@ canvas {
 }
 .container2 {
 	background-color: #273a3a;
-	border: 7px groove #77b9b94f;
-
+	//border: 7px groove #77b9b94f;
+	border-radius: 3px;
+	//border: 1px solid #fff;
 	width: 595px;
 	max-height: 84vh;
 
@@ -59,18 +63,25 @@ canvas {
 .container2::-webkit-scrollbar {
 	display: none;
 }
+.container2--text {
+	border: 1px solid red;
+}
 #link-dci {
 	text-decoration: none;
 	color: aquamarine;
 	text-shadow: none;
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		cursor: help;
 	}
 }
 #whatsnext {
 	text-shadow: none;
 	opacity: 28%;
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		cursor: no-drop;
 	}
 }
@@ -98,7 +109,9 @@ canvas {
 	//line-height: 1.49rem;
 	letter-spacing: 2px;
 	transition: all ease-in 0.21s;
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		font-weight: 900;
 		-webkit-text-stroke: 0.49rem #77f7f721;
 		opacity: 1;
@@ -122,23 +135,21 @@ canvas {
 }
 /////////////////////////////////////////////////
 .imgx1 {
+	img {
+		width: 77px;
+	}
 	position: absolute;
 	top: 42px;
 	left: 42px;
-	mix-blend-mode: color-dodge;
 	opacity: 77%;
+	mix-blend-mode: color-dodge;
 	transition: all 357ms ease-in;
-	&:hover {
-		//animation: scale-up-center 1.2s ease-out 0s 1 alternate both;
-		//
+	&:hover,
+	&:active,
+	&:focus {
 		transform: scale(21);
-		transition: all 210ms ease-out;
-		box-shadow: 0px 0px 28px 7px #000000;
 		opacity: 100%;
-	}
-	img {
-		width: 77px;
-		transform: scale(1);
+		transition: all 420ms ease-out;
 	}
 }
 // animation -> complete later
@@ -155,6 +166,30 @@ canvas {
 //}
 
 /* AUDIO */
+.audiodiv {
+	position: absolute;
+	bottom: 14px;
+	right: 21px;
+	font-size: 7rem;
+	color: #77f7f7;
+}
+.audiodiv-dart {
+	position: absolute;
+	transform: translateY(-70px) translateX(-42px);
+	transition: all 497ms ease-in;
+	opacity: 0.49;
+	cursor: crosshair;
+	&:hover,
+	&:active,
+	&:focus {
+		color: #ffbb4e;
+		opacity: 0.77;
+		transition: all 497ms ease-in;
+	}
+}
+#music-symbol {
+	font-size: 42px;
+}
 audio {
 	height: 6.7rem;
 	width: 35px;
@@ -167,36 +202,15 @@ audio {
 
 	opacity: 0.77;
 	transition: all 357ms ease-in;
-	&:hover {
-		box-shadow: 0px 0px 28px 3px #ffbb4e;
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: 0px 0px 21px 14px #ffbb4e;
 		transform: scale(1.4);
 		opacity: 1;
 		transition: all 210ms ease-out;
 	}
 }
-//
-.audiodiv {
-	position: absolute;
-	bottom: 7px;
-	right: 21px;
-	font-size: 7rem;
-	color: #77f7f7;
-}
-.audiodiv-dart {
-	position: absolute;
-	transform: translateY(-77px) translateX(-42px);
-	transition: all 497ms ease-in;
-	opacity: 0.49;
-	cursor: crosshair;
-	&:hover {
-		color: #ffbb4e;
-		transition: all 497ms ease-in;
-	}
-}
-#music-symbol {
-	font-size: 42px;
-}
-
 /////////////////////////////////////////////////
 // NAV / MENU
 ul {
@@ -211,7 +225,6 @@ ul {
 	align-items: center;
 	padding: 20px 50px;
 	position: fixed;
-	//background-color: #77f7f707;
 	width: 100%;
 	font-size: 28px;
 	color: #ffbb4e;
@@ -219,13 +232,15 @@ ul {
 .menu-div {
 	cursor: pointer;
 	transition: all 3.5s ease-out;
+	border: 1px solid red;
+	overflow: hidden;
 }
 
 .menu-div:hover {
 	color: rgba(128, 128, 128, 0.07);
 	//font-weight: 700;
-	font-size: 217%;
-	transform: skew(77deg, -7deg);
+	font-size: 200%;
+	transform: skew(49deg, -7deg);
 	transition: all 0.7s ease-out;
 }
 
@@ -237,16 +252,17 @@ ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 0px 77px;
+	padding: 0px 42px;
 	position: fixed;
 	top: -200vh;
 	align-items: center;
 	background-color: #273a3a;
 	font-size: 2em;
+	line-height: 1.4;
 }
 
 .nav {
-	opacity: 0;
+	//opacity: 0;
 	margin-bottom: -20px;
 }
 
@@ -256,15 +272,13 @@ ul {
 	text-decoration: line-through 10px #273a3a7c;
 	font-size: 7rem;
 
-	transition: all 0.2s ease-in-out;
+	transition: all 0.14s ease-in-out;
+	&:hover {
+		color: #273a3a;
+		opacity: 0.07;
+		transition: all 0.28s ease-in-out;
+	}
 }
-
-.nav-link:hover {
-	color: #273a3a;
-	opacity: 0.07;
-	transition: all 0.2s ease-in-out;
-}
-
 .background {
 	position: absolute;
 	font-size: 21rem;
@@ -279,16 +293,6 @@ ul {
 .small-number {
 	font-size: 1.2rem;
 }
-#disclaimer {
-	margin-top: 77px;
-	font-size: small;
-	opacity: 14%;
-	&:hover {
-		opacity: 77%;
-		//font-size: xx-large;
-	}
-	display: none;
-}
 
 .exit {
 	cursor: pointer;
@@ -296,7 +300,9 @@ ul {
 	//background-color: #ffbb4e7e;
 	right: 42px;
 	top: 35px;
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		opacity: 0;
 		transition: all 777ms ease-in-out;
 	}
@@ -324,7 +330,9 @@ ul {
 	a {
 		text-decoration: none;
 		color: inherit;
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			color: cyan;
 			text-decoration: overline;
 		}
@@ -338,8 +346,6 @@ ul {
 #heart {
 	position: absolute;
 	margin-left: 3px;
-	//margin-top: -2px;
-	//bottom: 420px;
 }
 .social-medias > p > a {
 	color: white;
@@ -348,7 +354,9 @@ ul {
 	font-size: 1.4rem;
 	letter-spacing: 2px;
 	transition: all 0.2s ease-in-out;
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		color: #273a3a;
 		opacity: 0.07;
 		transition: all 0.2s ease-in-out;
@@ -357,9 +365,16 @@ ul {
 
 // Media Query
 //
-@media screen and (min-width: 1024) {
+@media screen and (max-width: 1024px) {
 	.container2 {
 		width: 560px;
+	}
+	.imgx1 {
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(14);
+		}
 	}
 }
 @media screen and (max-width: 966px) {
@@ -376,6 +391,14 @@ ul {
 }
 
 @media screen and (max-width: 767px) {
+	.imgx1 {
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(12);
+		}
+	}
+
 	.container2 {
 		width: 560px;
 	}
@@ -396,6 +419,14 @@ ul {
 
 //
 @media screen and (max-width: 660px) {
+	.imgx1 {
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(9);
+		}
+	}
+
 	.home {
 		font-size: 2.1rem;
 	}
@@ -421,6 +452,14 @@ ul {
 }
 
 @media screen and (max-width: 544px) {
+	.imgx1 {
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(8);
+		}
+	}
+
 	.home {
 		font-size: 1.8rem;
 	}
@@ -431,6 +470,14 @@ ul {
 }
 
 @media screen and (max-width: 440px) {
+	.imgx1 {
+		&:hover,
+		&:active,
+		&:focus {
+			transform: scale(10);
+		}
+	}
+
 	.imgx1 {
 		top: 35px;
 		left: 35px;
