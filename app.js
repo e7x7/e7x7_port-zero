@@ -16,7 +16,7 @@ export default class Sketch {
 		////:::::::::::::::::::::::::::::::: CAMERA + SCENE
 		this.camera = new THREE.PerspectiveCamera(14, window.innerWidth / window.innerHeight, .00000001, 707);
 		this.camera.position.z = 0.5;
-		this.camera.position.y = 0.2;
+		this.camera.position.y = 0.57;
 		this.camera.position.x = -0.5;
 		this.scene = new THREE.Scene();
 		//////:::::::::::::::::::::::::::::::: RENDERER

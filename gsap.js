@@ -9,13 +9,13 @@ t1.to(".menu", { opacity: 1, duration: 1.05, top: 0, ease: Power2.easeInOut });
 t1.to(
 	".nav",
 	{
-		opacity: 0.77,
+		opacity: 1,
 		marginBottom: 0,
 		duration: 1,
 		ease: Power2.easeInOut,
-		stagger: 0.1,
+		stagger: 0.14,
 	},
-	">-0.5"
+	">-0.63"
 );
 
 menuBtn.addEventListener("click", () => {
