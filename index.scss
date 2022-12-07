@@ -1,4 +1,5 @@
 //@use './_mediaq';
+@use './loader';
 @use './reset';
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&display=swap');
@@ -8,6 +9,7 @@
 	box-sizing: border-box;
 }
 html {
+	//overflow: hidden;
 	font-size: 62.5%;
 	//font-family: 'Space Grotesk', sans-serif;
 	font-family: 'Syne', sans-serif;
@@ -17,24 +19,31 @@ html {
 body {
 	background: #000707;
 	color: #e7e7e7;
-	max-width: 100%;
+	//max-width: 100%;
+}
+#body-container {
+	display: none;
+	//display: block;
 }
 canvas {
 	display: block;
-	//cursor: -webkit-grab, -moz-grab;
 	cursor: grab;
 }
 
 #script-container {
 	//opacity: 0.16;
+	display: block;
 }
 .container1 {
+	//transition: all 497 ease-in;
 	height: 100vh;
 	width: 100%;
-	//cursor: -webkit-grab, -moz-grab;
+	//opacity: 0.92; ?why?does?it?do?that?
 }
 .container2 {
+	//transition: all 357ms ease-in;
 	background-color: #1e3136;
+
 	border-inline: 7px groove #77f7f71e;
 	border-radius: 7px;
 	width: 611px;
@@ -61,6 +70,7 @@ canvas {
 	h5 {
 		-webkit-text-stroke: 0.14rem #77f7f757;
 	}
+	//display: none;
 }
 //
 .container2::-webkit-scrollbar {
@@ -68,7 +78,9 @@ canvas {
 }
 .container2--text {
 }
-
+.container3 {
+	transition: all 147 ease-in;
+}
 .targets {
 	display: none;
 }
@@ -81,21 +93,20 @@ canvas {
 		-webkit-user-drag: none;
 		-webkit-user-select: none;
 		-ms-user-select: none;
+		opacity: 0.35;
 	}
 	#target1 {
 		position: absolute;
 		left: 7px;
-		top: 73%;
-		opacity: 0.7;
-		width: 21px;
+		top: 49%;
 		transform: scaleX(-1);
 		-webkit-transform: scaleX(-1);
+		width: 21px;
 	}
 	#target2 {
 		position: absolute;
 		right: 7px;
-		top: 73%;
-		opacity: 0.7;
+		top: 49%;
 		width: 21px;
 	}
 }
@@ -117,6 +128,9 @@ canvas {
 	&:active,
 	&:focus {
 		cursor: no-drop;
+		color: #e7e7e7;
+		transition: all 1477ms ease-in;
+		opacity: 91%;
 	}
 }
 #lucae {
@@ -166,7 +180,7 @@ canvas {
 }
 .skills {
 	margin-left: 28px;
-	text-indent: -10px;
+	text-indent: -7px;
 	font-size: 1.4rem;
 	ul > li {
 		list-style: disc;
@@ -260,11 +274,15 @@ ul {
 	font-size: 2rem;
 }
 .home {
+	transition: all 497ms ease-in;
+
+	//z-index: 99;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px 50px;
 	position: fixed;
+	top: 0;
 	width: 100%;
 	font-size: 28px;
 	color: #ffbb4e;
@@ -295,7 +313,7 @@ ul {
 	position: fixed;
 	top: -200vh;
 	align-items: center;
-	background-color: #1e3136;
+	background-color: #1e3136fd;
 	font-size: 2em;
 	line-height: 1.4;
 }
@@ -350,7 +368,7 @@ ul {
 	&:active,
 	&:focus {
 		opacity: 0;
-		transition: all 777ms ease-in-out;
+		transition: all 497ms ease-out;
 	}
 }
 

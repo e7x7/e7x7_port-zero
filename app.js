@@ -9,7 +9,9 @@ import testTexture from './images/edge.jpg'
 //console.log(testTexture)
 //const testT = testTexture
 export default class Sketch {
+
 	constructor(options) {
+
 		this.container = options.domElement
 		this.width = this.container.offsetWidth
 		this.height = this.container.offsetHeight
@@ -19,6 +21,7 @@ export default class Sketch {
 		this.camera.position.y = 0.57;
 		this.camera.position.x = -0.5;
 		this.scene = new THREE.Scene();
+
 		//////:::::::::::::::::::::::::::::::: RENDERER
 		this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 		this.renderer.setPixelRatio(window.devicePixelRatio)
@@ -46,15 +49,52 @@ export default class Sketch {
 	}
 
 	addObjects() {
-		//this.geometry = new THREE.SphereGeometry(.21, 777, 77);
-		this.geometry = new THREE.TetrahedronGeometry(0.21, 1);
+		//////:::::::::::::::::::::::::::::::: LOADER
 
-		//console.log(this.geometry);
+		const bodyContainer = document.getElementById('body-container');
+		const loadingScreen = document.getElementById('loading-screen');
+		// audiodiv getElementByClass
+		//const audiodiv = document.querySelector('.audiodiv')
+		//
+		const loadingManager = new THREE.LoadingManager();
+		function fadeout() {
+			loadingScreen.classList.add('fade-out');
+		}
+		function displayout() {
+			loadingScreen.style['display'] = "none"
+			//audiodiv.style['display'] = ''
+			bodyContainer.style['display'] = 'block'
+		}
+		setTimeout(fadeout, 470)
+		//
+		loadingManager.onStart = function () {
+			console.log("sphere loading...");
+			//
+			//bodyContainer.style['display'] = 'none'
+			//audiodiv.style['display'] = 'none'
+
+		}
+
+		loadingManager.onLoad = function () {
+			setTimeout(displayout, 3022)
+
+			console.log("hello sphere :)");
+			//loadingScreen.addEventListener('transitionend', onTransitionEnd);
+		}
+
+		//////:::::::::::::::::::::::::::::::: OBJECT
+		// geometry + (shader)material = mesh
+		// => Xscene.add(Xmesh)
+		this.geometry = new THREE.TetrahedronGeometry(0.21, 1);
+		//this.geometry = new THREE.SphereGeometry(.21, 777, 77);
+		console.log(this.geometry);
+		//const textureLoader = new THREE.TextureLoader(loadingManager);
+		//
 		this.material = new THREE.ShaderMaterial({
 			//wireframe: true,
 			uniforms: {
 				time: { value: 0.7 },
-				uTexture: { value: new THREE.TextureLoader().load(testTexture) },
+				uTexture: { value: new THREE.TextureLoader(loadingManager).load(testTexture) },
 				resolution: { value: new THREE.Vector2() }
 			},
 			vertexShader: vertex,
@@ -77,3 +117,7 @@ export default class Sketch {
 new Sketch({
 	domElement: document.getElementById('script-container')
 })
+// REMOVE LOADER FROM DOM
+function onTransitionEnd(event) {
+	event.target.remove();
+}
