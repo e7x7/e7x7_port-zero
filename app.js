@@ -50,50 +50,47 @@ export default class Sketch {
 
 	addObjects() {
 		//////:::::::::::::::::::::::::::::::: LOADER
-
-		const bodyContainer = document.getElementById('body-container');
-		const loadingScreen = document.getElementById('loading-screen');
-		// audiodiv getElementByClass
-		//const audiodiv = document.querySelector('.audiodiv')
+		const home = document.getElementById('home');
+		const container2 = document.getElementById('container2');
+		const container3 = document.getElementById('container3');
 		//
+		const loadingScreen = document.getElementById('loading-screen');
+		// LOADING MANAGER
 		const loadingManager = new THREE.LoadingManager();
+		// FUNCTIONS
 		function fadeout() {
 			loadingScreen.classList.add('fade-out');
 		}
 		function displayout() {
 			loadingScreen.style['display'] = "none"
-			//audiodiv.style['display'] = ''
-			bodyContainer.style['display'] = 'block'
+			container2.style['display'] = 'block';
+			container3.style['display'] = 'block';
+			home.style['display'] = 'flex';
 		}
-		setTimeout(fadeout, 470)
-		//
+		// useFUNCTIONS in LOADING MANAGER
 		loadingManager.onStart = function () {
 			console.log("sphere loading...");
-			//
-			//bodyContainer.style['display'] = 'none'
-			//audiodiv.style['display'] = 'none'
-
+			setTimeout(fadeout, 1477)
 		}
-
 		loadingManager.onLoad = function () {
-			setTimeout(displayout, 3022)
-
+			setTimeout(displayout, 3577)
 			console.log("hello sphere :)");
-			//loadingScreen.addEventListener('transitionend', onTransitionEnd);
+			console.log("♡☆♡◭♡☆♡");
+			loadingScreen.addEventListener('transitionend', onTransitionEnd);
 		}
-
+		//
 		//////:::::::::::::::::::::::::::::::: OBJECT
 		// geometry + (shader)material = mesh
 		// => Xscene.add(Xmesh)
 		this.geometry = new THREE.TetrahedronGeometry(0.21, 1);
 		//this.geometry = new THREE.SphereGeometry(.21, 777, 77);
+		console.log('hello, meet my sphere:');
 		console.log(this.geometry);
-		//const textureLoader = new THREE.TextureLoader(loadingManager);
 		//
 		this.material = new THREE.ShaderMaterial({
 			//wireframe: true,
 			uniforms: {
-				time: { value: 0.7 },
+				time: { value: 7 },
 				uTexture: { value: new THREE.TextureLoader(loadingManager).load(testTexture) },
 				resolution: { value: new THREE.Vector2() }
 			},
@@ -120,4 +117,5 @@ new Sketch({
 // REMOVE LOADER FROM DOM
 function onTransitionEnd(event) {
 	event.target.remove();
+	console.log('loadingscreen "vanished"')
 }

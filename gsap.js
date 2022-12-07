@@ -1,4 +1,3 @@
-//import { gsap } from "gsap";
 const menuBtn = document.querySelector(".menu-div");
 const exitBtn = document.querySelector(".exit");
 const nextBtn = document.querySelector("#whatsnext");
