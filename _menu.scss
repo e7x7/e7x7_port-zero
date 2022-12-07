@@ -56,11 +56,14 @@ ul {
 .nav {
 	margin-bottom: -20px;
 }
+.nav-link {
+	font-size: 5rem;
+}
 
 .nav-link {
 	color: #e7e7e7;
 	text-decoration: none;
-	font-size: 7rem;
+	font-size: 5rem;
 	//color: #77f7f7;
 
 	transition: all 0.41s ease-in-out;
@@ -104,26 +107,24 @@ ul {
 	}
 }
 
+// MENU RIGHT
+
+.right {
+	padding-right: 21px;
+	@media (max-width: 767px) {
+		padding-right: 49px;
+	}
+}
 .title {
-	font-size: 1.777rem;
 	color: #ffbb4e;
 }
-
-// MENU RIGHT
-//
 .info-divs {
 	margin-top: 35px;
 	margin-bottom: 14px;
 	> p {
-		font-size: 1.63rem;
 	}
 }
-.right {
-	padding-right: 49px;
-}
-.information {
-	margin-bottom: 21px;
-}
+
 .callme {
 	letter-spacing: 3px;
 	a {
@@ -139,7 +140,6 @@ ul {
 		}
 	}
 }
-
 //.social-container2s {}
 #heart {
 	position: absolute;

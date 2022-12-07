@@ -75,6 +75,8 @@ canvas {
 	display: none;
 }
 .container2--text {
+	letter-spacing: 0.05rem;
+	//border-inline: 1px solid red;
 }
 
 .targets {
@@ -184,6 +186,7 @@ canvas {
 	margin-left: 28px;
 	text-indent: -7px;
 	font-size: 1.4rem;
+	letter-spacing: 1px;
 	ul > li {
 		list-style: disc;
 	}
@@ -230,9 +233,10 @@ canvas {
 }
 .audiodiv-dart {
 	position: absolute;
-	transform: translateY(-63px) translateX(-45px);
+	transform: translateY(-35px) translateX(-1px);
 	transition: all 497ms ease-in;
 	opacity: 0.49;
+	font-size: 35px;
 	cursor: crosshair;
 	&:hover,
 	&:active,
@@ -241,12 +245,9 @@ canvas {
 		opacity: 1;
 	}
 }
-#music-symbol {
-	font-size: 35px;
-}
+
 audio {
 	height: 6.7rem;
-	//width: 71px;
 	width: 35px;
 	cursor: crosshair;
 
@@ -255,15 +256,14 @@ audio {
 	border: 5px solid #ffbb4e;
 	border-radius: 42px;
 
-	opacity: 0.77;
+	opacity: 0.7;
 	transition: all 357ms ease-in;
 	&:hover,
 	&:active,
 	&:focus {
 		box-shadow: 0px 0px 21px 7px #ffbb4e;
-		transform: scale(1.4);
+		transform: scale(1.26);
 		opacity: 1;
-		transition: all 210ms ease-out;
 	}
 }
 /////////////////////////////////////////////////

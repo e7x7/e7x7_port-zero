@@ -1,3 +1,5 @@
+import gsap from 'gsap'
+
 const menuBtn = document.querySelector(".menu-div");
 const exitBtn = document.querySelector(".exit");
 const nextBtn = document.querySelector("#whatsnext");
@@ -25,7 +27,6 @@ t1.to(
 
 menuBtn.addEventListener("click", () => {
 	t1.play().timeScale(1);
-	console.log('gsap1');
 	//cont1.style.setProperty("opacity", '0.7')
 
 	//cont2.style.opacity = '0'
@@ -57,5 +58,5 @@ exitBtn.addEventListener("click", () => {
 	//cont2.style.backgroundColor = '#1e3136'
 	cont3.style.opacity = '1'
 	home.style.opacity = '1'
-	cont2.style.display = ''
+	cont2.style.display = 'block'
 });
