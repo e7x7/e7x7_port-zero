@@ -1,5 +1,5 @@
 port/folio1.0  
-https://e7x7.vercel.app/  
+https://www.e7x7.space/
 the first version of my first portfolio.  
   
 sound and visuals are all made by yours truly.  
