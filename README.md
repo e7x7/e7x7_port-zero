@@ -1,6 +1,6 @@
 # port/folio1.0  
-
-https://www.e7x7.space/
+  
+https://www.e7x7.space/  
 the first version of my first portfolio.  
   
 sound and visuals are all made by yours truly.  
