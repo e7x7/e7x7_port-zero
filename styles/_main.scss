@@ -39,10 +39,10 @@ canvas {
 	//opacity: 0.92; ?why?does?it?do?that?
 }
 .container2 {
-	background-color: #77f7f749;
+	background-color: #7fffff49;
 	//background-color: #1e3136;
 
-	border-inline: 7px groove #77f7f71e;
+	border-inline: 7px groove #7fffff1e;
 	border-radius: 7px;
 	width: 611px;
 	max-height: 84vh;
@@ -68,7 +68,7 @@ canvas {
 	h3,
 	h4,
 	h5 {
-		-webkit-text-stroke: 0.14rem #77f7f757;
+		-webkit-text-stroke: 0.14rem #7fffff57;
 	}
 }
 //
@@ -136,7 +136,7 @@ canvas {
 #lucae {
 	font-size: 1.47em;
 	text-shadow: none;
-	-webkit-text-stroke: 0.35rem #77f7f777;
+	-webkit-text-stroke: 0.35rem #7fffff77;
 	transition: all 777ms ease-in-out;
 	&:hover {
 		-webkit-text-stroke: 0.07rem #ffbb4ebb;
@@ -230,7 +230,7 @@ canvas {
 	bottom: 7px;
 	right: 21px;
 	font-size: 7rem;
-	color: #77f7f7;
+	color: #7fffff;
 }
 .audiodiv-dart {
 	position: absolute;

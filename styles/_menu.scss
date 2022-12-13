@@ -51,24 +51,24 @@ ul {
 }
 .menu-container {
 	z-index: 3;
+	> h1 {
+		transform: translateY(-42px);
+		cursor: all-scroll;
+	}
 }
-
 .nav {
 	margin-bottom: -20px;
 }
 .nav-link {
-	font-size: 5rem;
-}
-
-.nav-link {
 	color: #e7e7e7;
 	text-decoration: none;
 	font-size: 5rem;
-	//color: #77f7f7;
+	//color: #7fffff;
+	cursor: help;
 
 	transition: all 0.41s ease-in-out;
 	&:hover {
-		text-decoration: line-through 77px #e7e7e72c;
+		text-decoration: line-through 135px #e7e7e7b0;
 		opacity: 0;
 		//color: #273a3a;
 	}
@@ -77,27 +77,41 @@ ul {
 	position: absolute;
 	font-size: 35.77rem;
 	font-weight: 600;
-	color: #77f7f7;
+	color: #7fffff;
 	opacity: 0.35;
 	//opacity: 0.49;
 	user-select: none;
 	z-index: -1;
 	letter-spacing: -14px;
 	transform: translateX(77px) scaleX(140%) scaleY(77%);
-	text-shadow: 0px -7px 7px #77f7f7;
+	text-shadow: 0px -7px 7px #7fffff;
 }
 .e {
 	font-size: 7.77rem;
 	transform: translateX(403px) translateY(-1px) scaleX(1900%) scaleY(150%);
 }
-.small-number {
-	font-size: 1.2rem;
+//
+.p-live {
+	color: #7fffff;
+	font-size: 21px;
+	cursor: alias;
+	text-decoration: none;
+	color: #e7e7e7;
+	&:hover {
+		text-decoration: underline #ffbb4e;
+	}
 }
-.p-links {
+.p-description {
 	display: flex;
-	margin-left: 29px;
-	margin-bottom: 14px;
-	margin-top: 0px;
+	flex-direction: column;
+	font-size: 1.4777rem;
+	@media (max-width: 767px) {
+		font-size: 12px;
+	}
+	margin-left: 49px;
+	margin-bottom: 28px;
+	margin-top: -7px;
+	color: #7fffff;
 	> a {
 		transition: all 497ms ease-out;
 		opacity: 0.7;
@@ -106,13 +120,10 @@ ul {
 			opacity: 0;
 		}
 	}
-}
-.p-demo {
-	color: #77f7f7;
-	margin-right: 14px;
-}
-.p-github {
-	color: #ffbb4e;
+	> :nth-child(2) {
+		color: #e7e7e7;
+		word-spacing: -1px;
+	}
 }
 
 .exit {
@@ -155,9 +166,9 @@ ul {
 		&:hover,
 		&:active,
 		&:focus {
-			color: #77f7f7;
+			color: #7fffff;
 			text-decoration: overline;
-			text-shadow: 1px 1px 7px #dedede;
+			text-shadow: 1px 1px 7px #e7e7e7;
 		}
 	}
 }
