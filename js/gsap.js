@@ -2,7 +2,7 @@ import gsap from 'gsap'
 
 const menuBtn = document.querySelector(".menu-div");
 const exitBtn = document.querySelector(".exit");
-const nextBtn = document.querySelector("#whatsnext");
+const nextBtn = document.querySelector("#myprojects");
 const cont1 = document.querySelector('.container1')
 const cont2 = document.querySelector('.container2')
 const cont3 = document.querySelector('.container3')

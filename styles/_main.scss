@@ -39,10 +39,12 @@ canvas {
 	//opacity: 0.92; ?why?does?it?do?that?
 }
 .container2 {
-	background-color: #7fffff49;
+	background-color: #7fffff00;
+	//background-color: #7fffff49;
 	//background-color: #1e3136;
 
-	border-inline: 7px groove #7fffff1e;
+	//border-inline: 7px groove #7fffff1e;
+	border-inline: 7px solid #7fffff00;
 	border-radius: 7px;
 	width: 611px;
 	max-height: 84vh;
@@ -119,18 +121,18 @@ canvas {
 		cursor: help;
 	}
 }
-#whatsnext {
+#myprojects {
 	text-shadow: none;
-	opacity: 21%;
+	//opacity: 21%;
 	font-weight: 700;
 	&:hover,
 	&:active,
 	&:focus {
-		cursor: no-drop;
-		color: #e7e7e7;
+		cursor: crosshair;
+		//color: #e7e7e7;
 
-		transition: all 1477ms ease-in;
-		opacity: 91%;
+		transition: all 777ms ease-in;
+		opacity: 0;
 	}
 }
 #lucae {
