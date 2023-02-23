@@ -64,7 +64,7 @@ ul {
 	text-decoration: none;
 	font-size: 5rem;
 	//color: #7fffff;
-	cursor: help;
+	cursor: alias;
 
 	transition: all 0.41s ease-in-out;
 	&:hover {
@@ -94,7 +94,7 @@ ul {
 .p-live {
 	color: #7fffff;
 	font-size: 21px;
-	cursor: alias;
+	cursor: help;
 	text-decoration: none;
 	color: #e7e7e7;
 	&:hover {
