@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import vertex from './shaders/vertex.glsl'
 import fragment from './shaders/fragment.glsl'
 
-import testTexture from './images/edge.jpg'
+import testTexture from './images/edgestars.jpg'
 //import testTexture from './img/cable6.png'
 //console.log(testTexture)
 //const testT = testTexture
@@ -17,9 +17,9 @@ export default class Sketch {
 		this.height = this.container.offsetHeight
 		////:::::::::::::::::::::::::::::::: CAMERA + SCENE
 		this.camera = new THREE.PerspectiveCamera(14, window.innerWidth / window.innerHeight, .00000001, 707);
-		this.camera.position.z = 0.5;
-		this.camera.position.y = 0.57;
-		this.camera.position.x = -0.5;
+		this.camera.position.z = -0.5;
+		this.camera.position.y = -0.585;
+		this.camera.position.x = 0.5;
 		this.scene = new THREE.Scene();
 
 		//////:::::::::::::::::::::::::::::::: RENDERER
@@ -30,7 +30,7 @@ export default class Sketch {
 		//////:::::::::::::::::::::::::::::::: CONTROLS
 		this.controls = new OrbitControls(this.camera, this.renderer.domElement)
 
-		this.time = 7
+		this.time = 0
 		this.resize()
 		this.addObjects()
 		this.render()
@@ -102,7 +102,7 @@ export default class Sketch {
 		this.scene.add(this.mesh);
 	}
 	render() {
-		this.time += 0.07
+		this.time += 0.049
 		this.material.uniforms.time.value = this.time
 
 		this.mesh.rotation.x = this.time / 2000;
