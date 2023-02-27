@@ -16,10 +16,12 @@ export default class Sketch {
 		this.width = this.container.offsetWidth
 		this.height = this.container.offsetHeight
 		////:::::::::::::::::::::::::::::::: CAMERA + SCENE
-		this.camera = new THREE.PerspectiveCamera(14, window.innerWidth / window.innerHeight, .00000001, 707);
-		this.camera.position.z = -0.5;
-		this.camera.position.y = -0.585;
-		this.camera.position.x = 0.5;
+		this.camera = new THREE.PerspectiveCamera(14, window.innerWidth / window.innerHeight, .001, 707);
+		this.camera.position.set(0.413, -0.52, -0.5);
+		//this.camera.position.x = 0.5;
+		//this.camera.position.y = -0.585;
+		//this.camera.position.z = -0.5;
+
 		this.scene = new THREE.Scene();
 
 		//////:::::::::::::::::::::::::::::::: RENDERER
@@ -29,7 +31,13 @@ export default class Sketch {
 		this.container.appendChild(this.renderer.domElement);
 		//////:::::::::::::::::::::::::::::::: CONTROLS
 		this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-
+		this.controls.minDistance = 0.7;
+		this.controls.maxDistance = 2.1;
+		this.controls.enableDamping = true;
+		this.controls.dampingFactor = 0.01;
+		this.controls.autoRotate = true;
+		this.controls.autoRotateSpeed = 0.049;
+		//
 		this.time = 0
 		this.resize()
 		this.addObjects()
@@ -104,9 +112,10 @@ export default class Sketch {
 	render() {
 		this.time += 0.049
 		this.material.uniforms.time.value = this.time
-
+		//this.camera.position.x += 0.01;
 		this.mesh.rotation.x = this.time / 2000;
 		this.mesh.rotation.y = this.time / 1000;
+		this.controls.update();
 		this.renderer.render(this.scene, this.camera);
 		requestAnimationFrame(this.render.bind(this))
 	}
