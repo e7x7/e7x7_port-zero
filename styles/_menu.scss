@@ -80,7 +80,7 @@ ul {
 	color: #7fffff;
 	opacity: 0.35;
 	//opacity: 0.49;
-	user-select: none;
+	-webkit-user-select: none;
 	z-index: -1;
 	letter-spacing: -14px;
 	transform: translateX(77px) scaleX(140%) scaleY(77%);
