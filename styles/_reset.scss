@@ -146,6 +146,7 @@ input[type='search']::-webkit-search-results-decoration {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
+	appearance: none;
 }
 
 input[type='search'] {
@@ -205,6 +206,7 @@ audio:not([controls]) {
 html {
 	font-size: 100%; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
+	text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
 	text-size-adjust: 100%; /* 2 */
 }
