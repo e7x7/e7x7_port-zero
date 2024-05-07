@@ -145,11 +145,13 @@ input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	appearance: none;
 }
 
 input[type='search'] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	appearance: none;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -203,6 +205,7 @@ audio:not([controls]) {
 html {
 	font-size: 100%; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
+	text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
 }
 
