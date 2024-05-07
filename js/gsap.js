@@ -10,7 +10,6 @@ const home = document.querySelector('.home')
 
 
 let t1 = gsap.timeline({ paused: true });
-
 t1.to(".menu", { opacity: 1, duration: 1.26, top: 0, ease: Power2.easeInOut });
 t1.to(
 	".nav",
@@ -49,6 +48,7 @@ nextBtn.addEventListener("click", () => {
 	cont2.style.display = 'none'
 });
 
+
 exitBtn.addEventListener("click", () => {
 	t1.timeScale(2.0);
 	t1.reverse();
@@ -60,3 +60,4 @@ exitBtn.addEventListener("click", () => {
 	home.style.opacity = '1'
 	cont2.style.display = 'block'
 });
+
